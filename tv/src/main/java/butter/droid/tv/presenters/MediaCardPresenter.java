@@ -138,7 +138,8 @@ public class MediaCardPresenter extends Presenter {
 				}
 			};
 			//load image
-			Picasso.get().load(item.image).resize(mCardWidth, mCardHeight).centerCrop().into(target);
+			if(!item.image.isEmpty())
+				Picasso.get().load(item.image).resize(mCardWidth, mCardHeight).centerCrop().into(target);
 			cardView.setTarget(target);
 		} else {
             cardView.getMainImageView().setImageResource(R.drawable.placeholder_inset);
